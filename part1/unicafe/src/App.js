@@ -47,6 +47,12 @@ const Positive = (props) =>{
   )
 }
 const Statistics = (props) =>{
+  // if(props.all === 0){
+  //   return(
+  //     <di
+  //   )
+  // }
+  
   return(
     <>
     <Review review ={props.good} text = "good"/>
