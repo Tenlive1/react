@@ -1,5 +1,4 @@
 import { useState } from 'react'
-
 function random(max,pre){
   let ran = Math.floor(Math.random() * max);
   if(ran === pre){
@@ -32,16 +31,17 @@ const App = () => {
     'The only way to go fast, is to go well.'
   ]
    
-  const [selected, setSelected] = useState(0)
-  let ran = random(anecdotes.length, selected)
+  const [selected, setSelected] = useState(0) // this will select the quotes
+  
+  const ran = random(anecdotes.length,selected) // this will make a random number
+  const [num, setnum] = useState(0) // holding the random number
+  const updatenum = ran;// updating the holder
 
-  let bla =ran;
- 
- 
-  let arr = Array.apply(null, Array(anecdotes.length)).map(function () { return 0; });
-  const [votes, setvotes] = useState(arr);
 
-  function handleIncrementClick(index) {
+  let arr = Array.apply(null, Array(anecdotes.length)).map(function () { return 0; });// making the array
+  const [votes, setvotes] = useState(arr);// setting the array in a state
+
+  function handleIncrementClick(index) {// function will increment
     const nextVotes = votes.map((c, i) => {
       if (i === index) {
         // Increment the clicked counter
@@ -53,15 +53,16 @@ const App = () => {
     });
     setvotes(nextVotes);
   }
+  
   return (
     <div>
-      {anecdotes[selected]}
+      {anecdotes[num]}
       <br></br>
-      has {votes[1]} votes
+      has {votes[num]} votes
       
       <div>
-        <Button handleClick={() =>{handleIncrementClick(1);}} text="vote"/>
-        <Button handleClick={()=>{setSelected(ran);}} text= "next anecdotes" />
+        <Button handleClick={() =>{handleIncrementClick(num);console.log(num );}} text="vote"/>
+        <Button handleClick={()=>{setnum(updatenum); setSelected(num); console.log(updatenum )}} text= "next anecdotes" />
       </div>
     </div>
   )
