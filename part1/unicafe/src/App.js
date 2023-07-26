@@ -20,30 +20,42 @@ const Button = (props) =>{
 }
 const Review =(props) =>{
   return(
-    <div>
-      {props.text} {props.review}
-    </div>
+    <>
+        <tr>
+          <td style={{width:0}} >{props.text}</td>
+          <td>{props.review}</td>
+        </tr>
+    </>
   )
 }
 const Total = (props) =>{
   return(
-    <div>
-      all {props.all}
-    </div>
+    <>
+      <tr>
+        <td>all</td>
+        <td>{props.all}</td> 
+      </tr>
+    </>
   )
 }
 const Average =(props) =>{
   return(
-    <div>
-      {props.text} {props.average}
-    </div>
+    <>
+        <tr>
+          <td >{props.text}</td>
+          <td>{props.average}</td>
+        </tr>
+    </>
   )
 }
 const Positive = (props) =>{
   return(
-    <div>
-      {props.text} {props.average} %
-    </div>
+    <>
+        <tr>
+          <td>{props.text}</td>
+          <td>{props.average} %</td>
+        </tr>
+    </>
   )
 }
 const Statistics = (props) =>{
@@ -56,14 +68,16 @@ const Statistics = (props) =>{
   }
   
   return(
-    <>
-    <Review review ={props.good} text = "good"/>
-    <Review review ={props.neutral} text = "neutral"/>
-    <Review review ={props.bad} text = "bad"/>
-    <Total all={props.all}/>
-    <Average text ="average" average={(props.good-props.bad) / props.all}/>
-    <Positive text = "positive" average = {(props.good / props.all) * 100}/>
-    </>
+    <table>
+      <tbody>
+        <Review review ={props.good} text = "good"/>
+        <Review review ={props.neutral} text = "neutral"/>
+        <Review review ={props.bad} text = "bad"/>
+        <Total all={props.all}/>
+        <Average text ="average" average={(props.good-props.bad) / props.all}/>
+        <Positive text = "positive" average = {(props.good / props.all) * 100}/>
+    </tbody>
+    </table>
 
 
 
