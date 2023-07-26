@@ -1,5 +1,14 @@
 import { useState } from 'react'
 
+function random(max,pre){
+  let ran = Math.floor(Math.random() * max);
+  if(ran === pre){
+    ran = Math.floor(Math.random() * max);
+  }
+
+  
+  return ran;
+}
 const Random = (props)=>{
 
   return (
@@ -23,15 +32,17 @@ const App = () => {
   ]
    
   const [selected, setSelected] = useState(0)
+  let ran = random(anecdotes.length, selected)
+
   return (
     <div>
       {anecdotes[selected]}
       <div>
-        
-        <Random handleClick={()=>{setSelected(Math.floor(Math.random()* anecdotes.length))}}/>
+        <Random handleClick={()=>{setSelected(ran);}} />
       </div>
     </div>
   )
+  
 }
 
 export default App
