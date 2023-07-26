@@ -47,11 +47,13 @@ const Positive = (props) =>{
   )
 }
 const Statistics = (props) =>{
-  // if(props.all === 0){
-  //   return(
-  //     <di
-  //   )
-  // }
+  if(props.all === 0){
+    return(
+      <div>
+        No feedback given
+      </div>
+    )
+  }
   
   return(
     <>
