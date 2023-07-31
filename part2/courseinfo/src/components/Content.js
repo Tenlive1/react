@@ -6,6 +6,7 @@ const Content = ({content}) =>{
             <Part part = {content[0]} />
             <Part part = {content[1]} />
             <Part part = {content[2]} />
+            <Part part = {content[3]} />
         </div>
     )
 }
