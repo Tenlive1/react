@@ -4,9 +4,13 @@ import Totalsum from './Totalsum'
 const Course =({course}) =>{
     return(
         <div>
-            <Header course = {course}/>
-            <Content content = {course.parts}/>
-            <Totalsum content = {course.parts}/>
+            <Header course = {course[0]}/>
+            <Content content = {course[0].parts}/>
+            <Totalsum content = {course[0].parts}/>
+            <div>
+                <Header course = {course[1]}/>
+                <Content content = {course[1].parts}/>
+            </div>
         </div>
     )
 }
