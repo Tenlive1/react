@@ -10,6 +10,7 @@ const Course =({course}) =>{
             <div>
                 <Header course = {course[1]}/>
                 <Content content = {course[1].parts}/>
+                <Totalsum content = {course[1].parts}/>
             </div>
         </div>
     )
